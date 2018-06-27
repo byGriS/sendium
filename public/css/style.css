@@ -1,0 +1,93 @@
+.navigation{
+	width: 130px;
+	height: 100vh;
+	position: fixed;
+	background: #343a40;
+	color: #eee;
+	font-size: 11pt;
+	text-align: center;
+}
+.navigation ul{
+	list-style: none;
+	margin: 0px 15px;
+	padding: 0px;
+
+	background: #343a40;
+}
+.navigation ul li{
+	cursor: pointer;
+	border-radius: 3px;
+	padding: 3px 10px;
+	margin: 3px 0px;
+	transition: background 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.navigation ul li:hover{
+	background: #202428;
+	box-shadow: inset 0px 0px 10px 0px #101214;
+}
+.navigation ul .active{
+	background: #0052AB;
+	box-shadow: inset 0px 0px 10px 0px #012A58;
+}
+.navigation ul .active:hover{
+	background: #0052AB;
+}
+.navigation ul hr{
+	margin: 10px -15px;
+	background: #ccc;
+}
+.minMenu{
+	background: url("https://png.icons8.com/color/30/000000/menu.png") center no-repeat;
+	width: 35px;
+	height:  35px;
+	display: none;
+	margin: 0 auto;
+	cursor: pointer;
+	border-radius: 3px;
+	transition: background 0.2s linear;
+}
+.minMenu:hover{
+	background: #252A2F url("https://png.icons8.com/color/30/000000/menu.png") center no-repeat;
+	
+}
+.wrapper{
+	padding-left: 130px;
+	padding-right: 150px;
+}
+
+.sidebar{
+	position: fixed;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	width: 150px;
+	background: #343a40;
+	color: #eee;
+}
+
+@media (max-width: 992px) {
+	.navigation{
+		width: 50px;
+	}
+	.navigation ul{
+		height: 100vh;
+		width: 130px;
+		border-radius: 4px;
+		margin: 0;
+		display: none;
+	}
+	.navigation ul hr{
+		margin: 0;
+	}
+	.navigation .minMenu{
+		display: block;
+	}
+	.wrapper{
+		padding-left: 50px;
+		padding-right: 0px;
+	}
+	.sidebar{
+		display: none;
+	}
+}
