@@ -55,6 +55,17 @@
 	padding-left: 130px;
 	padding-right: 150px;
 }
+.header{
+	background: #D6D8D9;
+	padding: 5px 15px;
+
+}
+.header div:not(:first-child){
+	text-align: right;
+}
+.headerTitle{
+	font-size: 14pt;
+}
 
 .sidebar{
 	position: fixed;
@@ -64,6 +75,22 @@
 	width: 150px;
 	background: #343a40;
 	color: #eee;
+}
+.sidebarBlock{
+	margin: 0 auto;
+}
+.sidebarDate{
+	cursor: pointer;
+}
+.sidebarDay{
+	text-align: center;
+	font: 50pt arial;
+	margin-top: 15px;
+}
+.sidebarMonth{
+	text-align: center;
+	font: 16pt arial;
+	margin-bottom: 15px;
 }
 
 @media (max-width: 992px) {
@@ -90,4 +117,17 @@
 	.sidebar{
 		display: none;
 	}
+}
+
+
+
+
+
+/******* ATICLES *****************/
+.newArticle{
+	text-align: center;
+}
+.newArticle .btn{
+	padding: 0 8px;
+	margin: 5px;
 }

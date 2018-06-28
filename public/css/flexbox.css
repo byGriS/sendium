@@ -1,0 +1,58 @@
+.flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
+  display: flex;
+}
+.flexDirectionColumn {
+  flex-direction: column;
+}
+.flexAlignItemsCenter {
+  align-items: center;
+}
+.flexAlignItemsStart {
+  align-items: flex-start;
+}
+.flexAlignItemsEnd {
+  align-items: flex-end;
+}
+.flexJustifyContentCenter {
+  justify-content: center;
+}
+.flexJustifyContentEnd {
+  justify-content: flex-end;
+}
+.flexJustifyContentSpaceBetween {
+  justify-content: space-between;
+}
+.flexJustifyContentSpaceAround {
+  justify-content: space-around;
+}
+.flexRightSpace {
+  margin-right: 5px;
+}
+.flex1 {
+  flex: 1;
+}
+.flex1-5 {
+  flex: 1.5;
+}
+.flex2 {
+  flex: 2;
+}
+.flex3 {
+  flex: 3;
+}
+.flex4 {
+  flex: 4;
+}
+.flex4-5 {
+  flex: 4.5;
+}
+.flex5 {
+  flex: 5;
+}
+.flexItemAlignSelfStretch{
+  align-self: stretch;
+}

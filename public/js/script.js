@@ -4,6 +4,8 @@ $(document).ready(function(){
 
 function MenuOnClick(){
 	$(".navigation ul").toggle("fast", function(){
-		$(".navigation ul")
+		if ($(this).css('display') === 'none'){
+			$(this).removeAttr('style');
+		}
 	});
 }
