@@ -2,6 +2,7 @@
 	width: 130px;
 	height: 100vh;
 	position: fixed;
+	top: 0;
 	background: #343a40;
 	color: #eee;
 	font-size: 11pt;
@@ -54,6 +55,7 @@
 .wrapper{
 	padding-left: 130px;
 	padding-right: 150px;
+	min-height: 100vh;
 }
 .header{
 	background: #D6D8D9;
@@ -120,12 +122,51 @@
 }
 
 
-
+/********* PAGINATION ***************/
+.pagination a{
+margin: 3px;
+}
+.pagination .active{
+	background: #004895!important;
+	border: 1px solid #003267!important;
+	pointer-events: none;
+}
 
 
 /******* ATICLES *****************/
-
 .newArticle .btn{
 	padding: 0 8px;
 	margin: 5px;
+}
+.article{
+	border-radius: 4px;
+	border: 1px solid #A4A4A4;
+	background: #EDEDED;
+	margin: 5px;
+
+}
+.articleHeader{
+	background: #D9D9D9;
+	padding: 5px 10px;
+}
+.articleTitle{
+
+}
+.articleDate{
+
+}
+.articlePreview{
+	padding: 5px 10px;
+}
+.articleFooter{
+	border-top: 1px solid #aaa;
+	padding: 5px 10px;
+}
+
+/***************** ОБЩИЕ КЛАССЫ ****************/
+.center{
+	text-align: center;
+}
+.margin10{
+	margin: 10px;
 }

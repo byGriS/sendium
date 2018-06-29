@@ -23,8 +23,8 @@
 		<div class="minMenu" onclick="MenuOnClick();"></div>
 		<ul>
 			<li>Главная</li>
-			<li class="active">Статьи</li>
-			<li>Задачи</li>
+			<li>Статьи</li>
+			<li class="active">Задачи</li>
 			<li>Проекты</li>
 			<hr/>
 			<li>Контакты</li>
@@ -37,7 +37,7 @@
 
 		<div class="header flex">
 			<div class="headerTitle col">
-				Статьи
+				Задачи
 			</div>
 			<div class="col">
 				<form action="#" method="post">
@@ -49,7 +49,7 @@
 		</div>
 
 		<div class="newArticle">
-			<a href="#" class="btn btn-sm btn-success"><img src="https://png.icons8.com/color/26/000000/plus.png">Создать новую статью</a>
+			<a href="#" class="btn btn-sm btn-success"><img src="https://png.icons8.com/color/26/000000/plus.png">Создать новую задачу</a>
 		</div>
 
 		<div class="articleWrapper">
