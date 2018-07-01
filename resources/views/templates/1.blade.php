@@ -47,11 +47,16 @@
 				</form>
 			</div>
 		</div>
-
-		<div class="newArticle">
-			<a href="#" class="btn btn-sm btn-success"><img src="https://png.icons8.com/color/26/000000/plus.png">Создать новую статью</a>
+		<div class="flex">
+			<div class="newArticle">
+				<a href="#" class="btn btn-sm btn-success"><img src="https://png.icons8.com/color/26/000000/plus.png">Создать новую статью</a>
+			</div>
+			<form class="form-search" method="post" action="#">
+				{{csrf_field()}}
+				<input type="text" class="input-medium search-query">
+				<button type="submit" class="btn btn-sm">Поиск</button>
+			</form>
 		</div>
-
 		<div class="articleWrapper">
 			<div class="article">
 				<div class="articleHeader flex flexJustifyContentSpaceBetween">
