@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('confirm/{token}', 'Auth\RegisterController@confirm');
 
 Route::get('/template/{id}',['as'=>'template', 'uses'=>'TemplateController@index'])->where('id','[0-9]+');
+
+
+Route::get('/',['as'=>'main','uses'=>'MainController@index']);
+
+Route::middleware(['auth'])->group(function(){
+	Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'DashboardController@index']);
+});
