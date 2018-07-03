@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -47,7 +47,7 @@ class RegisterController extends Controller{
 		$user->confirmed = true;
 		$user->confirmation_code = null;
 		$user->save();
-		Auth::login($user);
+		Auth::login($user, true);
 		return redirect('/');
 	}
 

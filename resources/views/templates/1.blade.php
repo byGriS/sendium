@@ -31,8 +31,8 @@
 			<li>Категории</li>
 			<li>Настройки</li>
 		</ul>
-
 	</div>
+	
 	<div class="wrapper container-fluid flex flexDirectionColumn flexJustifyContentCenter">
 
 		<div class="header flex">

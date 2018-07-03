@@ -62,7 +62,6 @@ body {
 	position: fixed;
 	top: 0;
 	background: #343a40;
-	color: #eee;
 	font-size: 11pt;
 	text-align: center;
 }
@@ -76,7 +75,6 @@ body {
 .navigation ul li{
 	cursor: pointer;
 	border-radius: 3px;
-	padding: 3px 10px;
 	margin: 3px 0px;
 	transition: background 0.2s ease-in;
 	transition: box-shadow 0.2s ease-in;
@@ -84,6 +82,13 @@ body {
 .navigation ul li:hover{
 	background: #202428;
 	box-shadow: inset 0px 0px 10px 0px #101214;
+}
+.navigation ul li a{
+	display: block;
+	text-decoration: none;
+	padding: 3px 10px;
+	width: 100%;
+	color: #eee;
 }
 .navigation ul .active{
 	background: #0052AB;
