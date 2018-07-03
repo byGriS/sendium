@@ -2,37 +2,37 @@
 
 use Illuminate\Database\Seeder;
 
-class NavigationTableSeeder extends Seeder{
+class NavigationsTableSeeder extends Seeder{
 	public function run(){
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'Главная',
   		'route' => 'dashboard'
   	]);
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'Статьи',
   		'route' => 'article.index'
   	]);
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'Задачи',
   		'route' => 'task.index'
   	]);
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'Проекты',
   		'route' => 'project.index'
   	]);
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'splitter',
   		'route' => ''
   	]);
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'Контакты',
   		'route' => 'contact.index'
   	]);
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'Категории',
   		'route' => 'category.index'
   	]);
-  	DB::table('navigation')->insert([
+  	DB::table('navigations')->insert([
   		'title' => 'Настройки',
   		'route' => 'setting'
   	]);

@@ -199,7 +199,7 @@ margin: 3px;
 /******* ATICLES *****************/
 .newArticle .btn{
 	padding: 0 8px;
-	margin: 5px;
+	
 }
 .article{
 	border-radius: 4px;
@@ -224,6 +224,12 @@ margin: 3px;
 .articleFooter{
 	border-top: 1px solid #aaa;
 	padding: 5px 10px;
+}
+.headerMenu{
+	padding: 4px;
+}
+.headerMenu select{
+	padding: 3px 12px;
 }
 
 /***************** ОБЩИЕ КЛАССЫ ****************/

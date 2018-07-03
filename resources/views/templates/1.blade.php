@@ -22,14 +22,14 @@
 	<div class="navigation">
 		<div class="minMenu" onclick="MenuOnClick();"></div>
 		<ul>
-			<li>Главная</li>
-			<li class="active">Статьи</li>
-			<li>Задачи</li>
-			<li>Проекты</li>
+			<li><a href="#">Главная</a></li>
+			<li class="active"><a href="#">Статьи</a></li>
+			<li><a href="#">Задачи</a></li>
+			<li><a href="#">Проекты</a></li>
 			<hr/>
-			<li>Контакты</li>
-			<li>Категории</li>
-			<li>Настройки</li>
+			<li><a href="#">Контакты</a></li>
+			<li><a href="#">Категории</a></li>
+			<li><a href="#">Настройки</a></li>
 		</ul>
 	</div>
 	
@@ -47,15 +47,28 @@
 				</form>
 			</div>
 		</div>
-		<div class="flex">
-			<div class="newArticle">
+		<div class="headerMenu row">
+			<div class="col-sm newArticle">
 				<a href="#" class="btn btn-sm btn-success"><img src="https://png.icons8.com/color/26/000000/plus.png">Создать новую статью</a>
 			</div>
-			<form class="form-search" method="post" action="#">
-				{{csrf_field()}}
-				<input type="text" class="input-medium search-query">
-				<button type="submit" class="btn btn-sm">Поиск</button>
-			</form>
+			<div class="col-sm">
+				<select class="custom-select form-control-sm">
+					<option>Все категории</option>
+					<option>Категория 1</option>
+					<option>Категория 2</option>
+					<option>Категория 3</option>
+				</select>
+			</div>
+			<div class="col-sm">
+				<form class="form-inline float-right" method="post" action="#">
+					{{csrf_field()}}
+					<div class="form-group">
+						<input type="text" class="form-control-sm search-query">
+						<button type="submit" class="btn btn-sm">Поиск</button>
+					</div>
+				</form>
+			</div>
+			
 		</div>
 		<div class="articleWrapper">
 			<div class="article">
@@ -131,7 +144,6 @@
 				Июнь 2018
 			</div>
 		</div>
-
 	</div>
 </body>
 </html>

@@ -19,7 +19,11 @@
 	<link href="{{ asset('css/flexbox.css') }}" rel="stylesheet">
 </head>
 <body>
-	@include('navigation.navigation')
-	@yield('content')
+	@include('layouts.navigation')
+	<div class="wrapper container-fluid flex flexDirectionColumn">
+		@include('layouts.header')
+		@yield('content')
+	</div>
+	@include('layouts.sidebar')
 </body>
 </html>

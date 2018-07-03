@@ -159,6 +159,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ComposerProvider::class,
 
     ],
 
@@ -210,5 +211,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+    'pagination' => [
+        'article' => 3,
+    ]
 
 ];
