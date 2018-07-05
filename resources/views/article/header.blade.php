@@ -1,6 +1,6 @@
 <div class="headerMenu row">
 	<div class="col-sm newArticle">
-		<a href="#" class="btn btn-sm btn-success"><img src="https://png.icons8.com/color/26/000000/plus.png">Создать новую статью</a>
+		<a href="{{route('article.create')}}" class="btn btn-sm btn-success"><img src="https://png.icons8.com/color/26/000000/plus.png">Создать новую статью</a>
 	</div>
 	<div class="col-sm">
 		<select class="custom-select form-control-sm">

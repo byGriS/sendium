@@ -239,3 +239,6 @@ margin: 3px;
 .margin10{
 	margin: 10px;
 }
+.noWhiteSpace{
+	white-space: nowrap;
+}
