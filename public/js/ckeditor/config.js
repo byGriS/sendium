@@ -31,7 +31,7 @@
 	config.filebrowserUploadUrl = '/uploadFileCKEditor';
 	config.removePlugins = 'elementspath';
 	config.resize_enabled = false;
-	config.height = '78vh';
+	config.height = '70vh';
 
 	config.extraPlugins = 'button,floatpanel,panel';
 };

@@ -15,8 +15,13 @@ class ArticleRepository extends BaseRepository{
 		$this->category = $category;
 	}
 
-	public function save($article, $inputs, $user_id = null){
-
+	public function add($article, $input, $user_id = null){
+		$text = explode('<hr />', $input['text']);
+		$article->title = $input['title'];
+		$article->preview = $text[0];
+		$article->text = $text[1];
+		$article->category_id = $this->category->whereTitle($input['category'])->first()->id;
+		$article->save();
 	}
 
 	public function getAll($paginate){

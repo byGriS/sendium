@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Repository\ArticleRepository;
+use App\Repository\CategoryRepository;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller{
 	
-	protected $articlesModel;
+	protected $articleModel;
+	protected $categoryModel;
 
-	public function __construct(ArticleRepository $articles){
-		$this->articlesModel = $articles;
+	public function __construct(ArticleRepository $articles, CategoryRepository $categories){
+		$this->articleModel = $articles;
+		$this->categoryModel = $categories;
 	}
 
 	/**
@@ -20,10 +24,9 @@ class ArticleController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function index(){
-		$articles = $this->articlesModel->getAll(config('app.pagination.article'));
-		return view('article.index',[
-			compact('articles')
-		]);
+		$articles = $this->articleModel->getAll(config('app.pagination.article'));
+		$categories = $this->categoryModel->getAll();
+		return view('article.index',compact('articles', 'categories'));
 	}
 
 	/**
@@ -32,7 +35,8 @@ class ArticleController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function create(){
-		return view('article.create');
+		$categories = $this->categoryModel->getAll();
+		return view('article.create', compact('categories'));
 	}
 
 	/**
@@ -42,7 +46,9 @@ class ArticleController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function store(Request $request){
-	
+		$input = $request->all();
+		$this->articleModel->add(new Article, $input, Auth::user()->id);
+		return redirect('article');
 	}
 
 	/**

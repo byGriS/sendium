@@ -4,6 +4,26 @@
 @include('article.header')
 
 <div class="articleWrapper">
+	@foreach($articles as $article)
+	<div class="article">
+		<div class="articleHeader flex flexJustifyContentSpaceBetween">
+			<div class="articleTitle">
+				{{$article->title}}
+			</div>
+			<div class="articleDate">
+				{{$article->created_at}}
+			</div>
+		</div>
+		<div class="articlePreview">
+			{!!$article->preview !!}
+		</div>
+		<div class="articleFooter flex flexJustifyContentSpaceBetween">
+			<a href="#" class="btn btn-sm btn-primary">Читать далее</a>
+			<a href="#" class="btn btn-sm btn-success">Редактировать</a>
+		</div>
+	</div>
+	@endforeach
+
 	<div class="article">
 		<div class="articleHeader flex flexJustifyContentSpaceBetween">
 			<div class="articleTitle">
@@ -20,7 +40,8 @@
 			<a href="#" class="btn btn-sm btn-primary">Читать далее</a>
 			<a href="#" class="btn btn-sm btn-success">Редактировать</a>
 		</div>
-	</div>	
+	</div>
+
 </div>
 
 @include('layouts.pagination')
