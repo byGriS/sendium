@@ -19,7 +19,7 @@ class ArticleRepository extends BaseRepository{
 		$text = explode('<hr />', $input['text']);
 		$article->title = $input['title'];
 		$article->preview = $text[0];
-		$article->text = $text[1];
+		$article->text = $input['text'];
 		$article->category_id = $this->category->whereTitle($input['category'])->first()->id;
 		$article->save();
 	}

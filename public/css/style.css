@@ -248,6 +248,15 @@ body {
 .articleForm select{
 	padding: 3px 12px;
 }
+.articleTitle{
+	border-bottom: 1px solid #aaa;
+	font-size: 20pt;
+	padding: 4px 10px;
+}
+.articleText{
+	border-bottom: 1px solid #aaa;
+	padding: 4px 10px;
+}
 
 /***************** ОБЩИЕ КЛАССЫ ****************/
 .center{

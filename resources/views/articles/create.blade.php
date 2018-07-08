@@ -5,9 +5,7 @@
 <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 <form id="form" method="post" action="{{route('article.store')}}" class="articleForm flex1 flex flexDirectionColumn">
 	{{csrf_field()}}
-	
-		<input type="text" class="flex1" name="title" placeholder="Заголовок" value="{{old('title')}}" required />
-	
+	<input type="text" class="flex1" name="title" placeholder="Заголовок" value="{{old('title')}}" required />
 	<textarea class="flex1" name="text"></textarea>
 	<div class="flex center margin10">
 		<lable class="noWhiteSpace flex1">Укажите категорию</lable>

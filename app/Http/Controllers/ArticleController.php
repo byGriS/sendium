@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Category;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,7 @@ class ArticleController extends Controller{
 	public function index(){
 		$articles = $this->articleModel->getAll(config('app.pagination.article'));
 		$categories = $this->categoryModel->getAll();
-		return view('article.index',compact('articles', 'categories'));
+		return view('articles.index',compact('articles', 'categories'));
 	}
 
 	/**
@@ -36,7 +37,7 @@ class ArticleController extends Controller{
 	*/
 	public function create(){
 		$categories = $this->categoryModel->getAll();
-		return view('article.create', compact('categories'));
+		return view('articles.create', compact('categories'));
 	}
 
 	/**
@@ -57,8 +58,9 @@ class ArticleController extends Controller{
 	* @param  int  $id
 	* @return \Illuminate\Http\Response
 	*/
-	public function show($id){
-		return view('article.index');
+	public function show(Article $article){
+		$category = $article->category;
+		return view('articles.show', compact('article','category'));
 	}
 
 	/**

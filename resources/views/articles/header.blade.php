@@ -5,9 +5,9 @@
 	<div class="col-sm">
 		<select class="custom-select form-control-sm">
 			<option>Все категории</option>
-			<option>Категория 1</option>
-			<option>Категория 2</option>
-			<option>Категория 3</option>
+			@foreach($categories as $category)
+			<option>{{$category->title}}</option>
+			@endforeach
 		</select>
 	</div>
 	<div class="col-sm">

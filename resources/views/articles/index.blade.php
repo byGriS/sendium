@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('article.header')
+@include('articles.header')
 
 <div class="articleWrapper">
 	@foreach($articles as $article)
@@ -18,8 +18,8 @@
 			{!!$article->preview !!}
 		</div>
 		<div class="articleFooter flex flexJustifyContentSpaceBetween">
-			<a href="#" class="btn btn-sm btn-primary">Читать далее</a>
-			<a href="#" class="btn btn-sm btn-success">Редактировать</a>
+			<a href="{{route('article.show',$article->id)}}" class="btn btn-sm btn-primary">Читать далее</a>
+			<a href="{{route('article.edit',$article->id)}}" class="btn btn-sm btn-success">Редактировать</a>
 		</div>
 	</div>
 	@endforeach

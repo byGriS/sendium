@@ -8,6 +8,9 @@
 .flexDirectionColumn {
   flex-direction: column;
 }
+.flexDirectionRowRev{
+  flex-direction: row-reverse;
+}
 .flexAlignItemsCenter {
   align-items: center;
 }
