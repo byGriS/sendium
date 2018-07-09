@@ -26,6 +26,7 @@ class ArticleController extends Controller{
 	*/
 	public function index(){
 		$articles = $this->articleModel->getAll(config('app.pagination.article'));
+		$articles->load('owner','category');
 		$categories = $this->categoryModel->getAll();
 		return view('articles.index',compact('articles', 'categories'));
 	}
@@ -58,7 +59,7 @@ class ArticleController extends Controller{
 	* @param  int  $id
 	* @return \Illuminate\Http\Response
 	*/
-	public function show(Article $article){
+	public function show(Request $request, Article $article){
 		$category = $article->category;
 		return view('articles.show', compact('article','category'));
 	}
@@ -69,8 +70,9 @@ class ArticleController extends Controller{
 	* @param  int  $id
 	* @return \Illuminate\Http\Response
 	*/
-	public function edit($id){
-	
+	public function edit(Article $article){
+		$categories = $this->categoryModel->getAll();
+		return view('articles.edit', compact('article','categories'));
 	}
 
 	/**
@@ -80,8 +82,9 @@ class ArticleController extends Controller{
 	* @param  int  $id
 	* @return \Illuminate\Http\Response
 	*/
-	public function update(Request $request, $id){
-	
+	public function update(Request $request, Article $article){
+		$this->articleModel->update($article, $request->all());
+		return redirect('article');
 	}
 
 	/**
@@ -91,6 +94,7 @@ class ArticleController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function destroy($id){
-	
+		$this->articleModel->destroy($id);
+		return redirect('article');
 	}
 }

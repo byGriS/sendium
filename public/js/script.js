@@ -9,3 +9,11 @@ function MenuOnClick(){
 		}
 	});
 }
+
+function ArticleFormDelete(){
+	event.preventDefault();
+	var form = document.forms.form;
+	var method = form.elements['_method'];
+	method.value = 'delete';
+	form.submit();
+}
