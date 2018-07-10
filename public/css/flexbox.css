@@ -8,6 +8,9 @@
 .flexDirectionColumn {
   flex-direction: column;
 }
+.flexWrap{
+  flex-wrap: wrap;
+}
 .flexDirectionRowRev{
   flex-direction: row-reverse;
 }
@@ -19,6 +22,9 @@
 }
 .flexAlignItemsEnd {
   align-items: flex-end;
+}
+.flexItemAlignSelfStretch{
+  align-self: stretch;
 }
 .flexJustifyContentCenter {
   justify-content: center;
@@ -55,7 +61,4 @@
 }
 .flex5 {
   flex: 5;
-}
-.flexItemAlignSelfStretch{
-  align-self: stretch;
 }

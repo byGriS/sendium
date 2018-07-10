@@ -20,10 +20,9 @@
 </head>
 <body>
 	@include('layouts.navigation')
-	<div class="wrapper container-fluid flex flexDirectionColumn">
+	<div class="wrapper flex flexDirectionColumn">
 		@include('layouts.header')
 		@yield('content')
 	</div>
-	@include('layouts.sidebar')
 </body>
 </html>

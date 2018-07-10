@@ -116,13 +116,11 @@ body {
 }
 .wrapper{
 	padding-left: 130px;
-	padding-right: 150px;
 	min-height: 100vh;
 }
 .header{
 	background: #D6D8D9;
 	padding: 5px 15px;
-
 }
 .header div:not(:first-child){
 	text-align: right;
@@ -132,19 +130,13 @@ body {
 }
 
 .sidebar{
-	position: fixed;
-	right: 0;
-	top: 0;
-	height: 100vh;
 	width: 150px;
 	background: #343a40;
 	color: #eee;
 }
-.sidebarBlock{
-	margin: 0 auto;
-}
 .sidebarDate{
 	cursor: pointer;
+	border-bottom: 1px solid #676767;
 }
 .sidebarDay{
 	text-align: center;
@@ -156,13 +148,24 @@ body {
 	font: 16pt arial;
 	margin-bottom: 15px;
 }
+.sidebarBlock{
+	margin: 0px 0;
+	padding: 10px 10px;
+	border-bottom: 1px solid #676767;
+}
+.minDate{
+	font: 12pt arial;
+	font-weight: bold;
+	padding: 5px 0px;
+	display: none;
+}
 
 @media (max-width: 992px) {
 	.navigation{
 		width: 50px;
 	}
 	.navigation ul{
-		height: 100vh;
+		/*height: 100vh;*/
 		width: 130px;
 		border-radius: 4px;
 		margin: 0;
@@ -179,7 +182,7 @@ body {
 		padding-right: 0px;
 	}
 	.sidebar{
-		display: none;
+		width: 50px;
 	}
 }
 
@@ -197,7 +200,19 @@ body {
 
 /******* ARTICLES *****************/
 .newArticle .btn{
-	padding: 0 8px;
+	width: 100%;
+}
+.sidebarWrapper{
+	width: 150px;
+}
+.sidebarWrapper div{
+	width: 100%;
+}
+.sidebar select{
+	padding: 2px 6px;
+}
+.sidebar input{
+	width: 100%;
 }
 .article{
 	border-radius: 4px;
@@ -261,6 +276,31 @@ body {
 .articleTextShow{
 	border-bottom: 1px solid #aaa;
 	padding: 4px 10px;
+}
+
+@media (max-width: 992px) {
+	.sidebar{
+		position: relative;
+	}
+	.sidebarWrapper{
+		position: absolute;
+		right: 0px;
+		/*height: 100vh;*/
+		background: #343a40;
+		width: 130px;
+		border-radius: 4px;
+		margin: 0;
+		display: none;
+	}
+	.sidebar .minMenu{
+		display: block;
+	}
+	.minDate{
+		display: block;
+	}
+	.sidebarDate{
+		display: none;
+	}
 }
 
 /***************** ОБЩИЕ КЛАССЫ ****************/

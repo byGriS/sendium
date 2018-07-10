@@ -1,8 +1,8 @@
-<div class="header flex">
-	<div class="headerTitle col">
+<div class="header flex flexJustifyContentSpaceBetween">
+	<div class="headerTitle ">
 		Статьи
 	</div>
-	<div class="col">
+	<div class="">
 		<form action="#" method="post">
 			{{csrf_field()}}
 			<label>Константин</label>

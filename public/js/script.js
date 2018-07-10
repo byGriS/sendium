@@ -10,6 +10,19 @@ function MenuOnClick(){
 	});
 }
 
+function SidebarMenuOnClick(){
+	$(".sidebarWrapper").toggle("fast", function(){
+		if ($(this).css('display') === 'none'){
+			$(this).removeAttr('style');
+		}
+	});
+}
+
+function newArticleOnClick(){
+	var form = document.forms.newArticle;
+	form.submit();
+}
+
 function ArticleFormDelete(){
 	event.preventDefault();
 	var form = document.forms.form;
