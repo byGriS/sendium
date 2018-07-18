@@ -11,8 +11,8 @@
 			</div>
 		</div>
 		<div class="flex flexDirectionColumn flexAlignItemsCenter">
-			<div class="newArticle sidebarBlock">
-				<a href="{{route('article.create')}}" class="btn btn-sm btn-success">Создать</a>
+			<div class="sidebarBlock">
+				<a href="{{route('article.create')}}" class="width100 btn btn-sm btn-success">Создать</a>
 			</div>
 			<div class="sidebarBlock">
 				Фильтр

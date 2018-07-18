@@ -213,7 +213,7 @@ return [
     ],
 
     'pagination' => [
-        'article' => 3,
+        'article' => 5,
     ]
 
 ];

@@ -199,9 +199,6 @@ body {
 
 
 /******* ARTICLES *****************/
-.newArticle .btn{
-	width: 100%;
-}
 .sidebarWrapper{
 	width: 150px;
 }
@@ -315,6 +312,9 @@ body {
 }
 .width33{
 	width: 33%;
+}
+.width100{
+	width: 100%;
 }
 .widthMin100px{
 	min-width: 200px;

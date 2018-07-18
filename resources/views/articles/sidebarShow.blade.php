@@ -12,15 +12,7 @@
 		</div>
 		<div class="flex flexDirectionColumn flexAlignItemsCenter">
 			<div class="sidebarBlock">
-				Категория
-				<select id="categorySelect" class="custom-select form-control-sm flex1">
-					@foreach($categories as $category)
-					<option>{{$category->title}}</option>
-					@endforeach
-				</select>	
-			</div>
-			<div class="sidebarBlock">
-				<button class="width100 btn btn-sm btn-success" onClick="newArticleOnClick();">Добавить</button>
+				<a href="{{route('article.edit', $article->id)}}" class="width100 btn btn-sm btn-success">Редактировать</a>
 			</div>
 		</div>
 	</div>

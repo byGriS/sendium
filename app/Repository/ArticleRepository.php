@@ -36,7 +36,7 @@ class ArticleRepository extends BaseRepository{
 	}
 
 	public function getAll($paginate){
-		return $this->model->all();
+		return $this->model->orderBy('created_at','desc')->paginate($paginate);
 	}
 
 	public function search($serach, $paginate){

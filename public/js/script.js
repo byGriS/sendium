@@ -19,7 +19,12 @@ function SidebarMenuOnClick(){
 }
 
 function newArticleOnClick(){
+	var categorySelect = document.getElementById('categorySelect');
 	var form = document.forms.newArticle;
+	var categoryInput = document.createElement('input');
+	categoryInput.setAttribute('name','category');
+	categoryInput.setAttribute('value', categorySelect.value);
+	form.appendChild(categoryInput);
 	form.submit();
 }
 
