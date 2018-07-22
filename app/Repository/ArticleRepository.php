@@ -51,7 +51,10 @@ class ArticleRepository extends BaseRepository{
 		$this->add($article, $input);
 	}
 
-
-
-
+	public function uploadImage($file){
+		$filename = md5_file($file->getRealPath());
+		$file->move(public_path().'/'.Auth::user()->id.'/articles/', $filename);
+		$url = "/".Auth::user()->id."/articles/" . $filename;
+		return response('{"uploaded": 1,"fileName": "'.$filename.'","url": "'.$url.'"}');
+	}
 }

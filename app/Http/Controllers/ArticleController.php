@@ -8,6 +8,9 @@ use App\Models\Category;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Article\ArticleUploadRequest;
+
+use Illuminate\Support\Facades\Input;
 
 class ArticleController extends Controller{
 	
@@ -96,5 +99,9 @@ class ArticleController extends Controller{
 	public function destroy($id){
 		$this->articleModel->destroy($id);
 		return redirect('article');
+	}
+
+	public function uploadImage(ArticleUploadRequest $request){
+		return $this->articleModel->uploadImage($request->file('upload'));
 	}
 }

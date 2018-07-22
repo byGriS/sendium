@@ -10,11 +10,11 @@
 
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbar = [
-		{ name: 'tools', items: [ 'Maximize' ] },
-		{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Strike', '-', 'RemoveFormat' ] },
-		{ name: 'paragraph', items: [ 'NumberedList', 'BulletedList' ] },
-		{ name: 'styles', items: [ 'Format', 'Font', 'FontSize' ] },
-		{ name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] }
+	{ name: 'tools', items: [ 'Maximize' ] },
+	{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Strike', '-', 'RemoveFormat' ] },
+	{ name: 'paragraph', items: [ 'NumberedList', 'BulletedList' ] },
+	{ name: 'styles', items: [ 'Format', 'Font', 'FontSize' ] },
+	{ name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] }
 	];
 	
 
@@ -31,7 +31,7 @@
 	config.filebrowserUploadUrl = '/uploadFileCKEditor';
 	config.removePlugins = 'elementspath';
 	config.resize_enabled = false;
-	config.height = '78vh';
+	config.height = '85vh';
 
 	config.extraPlugins = 'button,floatpanel,panel';
 };

@@ -20,7 +20,7 @@
 				</select>	
 			</div>
 			<div class="sidebarBlock">
-				<button type="submit" class="width100 btn btn-sm btn-success">Изменить</button>	
+				<button type="submit" class="width100 btn btn-sm btn-success" onClick="newArticleOnClick();">Изменить</button>	
 			</div>
 			<div class="sidebarBlock">
 				<button class="width100 btn btn-sm btn-danger" onClick="ArticleFormDelete();">Удалить</button>

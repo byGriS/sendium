@@ -20,17 +20,22 @@ function SidebarMenuOnClick(){
 
 function newArticleOnClick(){
 	var categorySelect = document.getElementById('categorySelect');
-	var form = document.forms.newArticle;
+	var form = document.forms.articleForm;
 	var categoryInput = document.createElement('input');
+	categoryInput.setAttribute('type','hidden');
 	categoryInput.setAttribute('name','category');
 	categoryInput.setAttribute('value', categorySelect.value);
 	form.appendChild(categoryInput);
-	form.submit();
+	if (form['title'].value == ""){
+		alert("op");
+	}else{
+		form.submit();
+	}
 }
 
 function ArticleFormDelete(){
 	event.preventDefault();
-	var form = document.forms.form;
+	var form = document.forms.articleForm;
 	var method = form.elements['_method'];
 	method.value = 'delete';
 	form.submit();

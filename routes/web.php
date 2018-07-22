@@ -12,13 +12,15 @@
 */
 
 
+
 Auth::routes();
 Route::get('confirm/{token}', 'Auth\RegisterController@confirm');
 
 Route::get('/template/{id}',['as'=>'template', 'uses'=>'TemplateController@index'])->where('id','[0-9]+');
 
-
 Route::get('/',['as'=>'main','uses'=>'MainController@index']);
+
+Route::post('/uploadFileCKEditor',['as'=>'upload','uses'=>'ArticleController@uploadImage']);
 
 Route::middleware(['auth'])->group(function(){
 	Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'DashboardController@index']);
