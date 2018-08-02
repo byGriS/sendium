@@ -27,7 +27,7 @@ function newArticleOnClick(){
 	categoryInput.setAttribute('value', categorySelect.value);
 	form.appendChild(categoryInput);
 	if (form['title'].value == ""){
-		alert("op");
+		form['title'].classList.add('errorInput');
 	}else{
 		form.submit();
 	}
@@ -39,4 +39,9 @@ function ArticleFormDelete(){
 	var method = form.elements['_method'];
 	method.value = 'delete';
 	form.submit();
+}
+
+// убираем красную границу с поля ввода (убираем класс Ошибка)
+function InputFocus(elem){
+	elem.classList.remove('errorInput');
 }

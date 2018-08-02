@@ -320,3 +320,6 @@ body {
 .widthMin100px{
 	min-width: 200px;
 }
+.errorInput{
+	border: 1px solid red!important;
+}
