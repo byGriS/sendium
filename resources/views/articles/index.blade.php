@@ -27,7 +27,8 @@
 			@endforeach
 
 		</div>
-		@include('layouts.pagination')
+		@include('layouts.pagination', ['paginator' => $articles])
+		{{-- @include('layouts.pagination') --}}
 	</div>
 	@include('articles.sidebarIndex')
 </div>
