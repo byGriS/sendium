@@ -1,14 +1,7 @@
 <div class="sidebar">
 	@include('layouts.calendar')
+	<div class="minMenu" onclick="SidebarMenuOnClick();"></div>
 	<div class="sidebarWrapper">
-		<div class="sidebarDate">
-			<div class="sidebarDay">
-				28
-			</div>
-			<div class="sidebarMonth">
-				Июнь 2018
-			</div>
-		</div>
 		<div class="flex flexDirectionColumn flexAlignItemsCenter">
 			<div class="sidebarBlock">
 				<a href="{{route('article.create')}}" class="width100 btn btn-sm btn-success">Создать</a>

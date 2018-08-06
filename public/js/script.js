@@ -45,3 +45,10 @@ function ArticleFormDelete(){
 function InputFocus(elem){
 	elem.classList.remove('errorInput');
 }
+
+
+/******* Calendar **********/
+function ShowYear(elem){
+	$(elem).slideUp('slow');
+	$(".dateMonth").slideDown('slow');
+}
