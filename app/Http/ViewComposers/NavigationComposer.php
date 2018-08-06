@@ -10,4 +10,4 @@ class NavigationComposer{
 	public function compose(View $view){
 		$view->with('navigation', Navigation::all())->with('currentRoute', explode('/',Route::current()->uri)[0]);
 	}
-}
+}	
