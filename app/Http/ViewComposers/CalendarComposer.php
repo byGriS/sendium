@@ -9,8 +9,10 @@ use App\Services\MonthConvert;
 class CalendarComposer{
 	public function compose(View $view){
 		$dateNow = Carbon::now();
+		$dateStart = new Carbon();
+		$dateStart->startOfMonth()->startOfWeek();
 		$month = MonthConvert::NumToRus($dateNow->format('n'));
 		
-		$view->with("date", $dateNow)->with("month", $month);
+		$view->with("dateNow", $dateNow)->with("month", $month)->with("dateStart", $dateStart);
 	}
 }

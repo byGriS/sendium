@@ -43,8 +43,8 @@ class ArticleRepository extends BaseRepository{
 
 	}
 
-	public function getByCategory($category){
-
+	public function getByCategory($category, $paginate){
+		return $this->model->where('category_id','=',$category->id)->orderBy('created_at','desc')->paginate($paginate);
 	}
 
 	public function update($article, $input){

@@ -8,12 +8,14 @@
 			</div>
 			<div class="sidebarBlock">
 				Фильтр
-				<select class="custom-select form-control-sm">
+				<form id="filterCategory" method="get" action="{{route('articleFilter')}}">
+				<select class="custom-select form-control-sm" name="category" onchange="categoryFilterChange(this);">
 					<option>Все категории</option>
 					@foreach($categories as $category)
 					<option>{{$category->title}}</option>
 					@endforeach
 				</select>
+			</form>
 			</div>
 			<div class="sidebarBlock">
 				Поиск

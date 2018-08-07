@@ -46,9 +46,32 @@ function InputFocus(elem){
 	elem.classList.remove('errorInput');
 }
 
+// фильтруем по категории
+function categoryFilterChange(elem){
+	$("#filterCategory").submit();
+	// $.ajax({
+	// 	type: "POST",
+	// 	url: '/article/filter',
+	// 	data: {category: $(elem).val(), _token:$('meta[name="csrf-token"]').attr('content')},
+	// 	success: function(data) {
+	// 		$(".articleWrapper").html(data);
+	// 	}
+	// });
+	
+}
+
+
 
 /******* Calendar **********/
-function ShowYear(elem){
-	$(elem).slideUp('slow');
-	$(".dateMonth").slideDown('slow');
+function ToggleCalendar(elem){
+	if ($(".dateDay").css('display') != 'none'){
+		$(".dateDay").slideUp('slow');
+		$(".dateMonth").slideDown('slow');
+	}else{
+		$(".dateDay").slideDown('slow');
+		$(".dateMonth").slideUp('slow');
+	}
 }
+/***************************/
+
+

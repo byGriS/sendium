@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function(){
 	Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'DashboardController@index']);
 
 	Route::resource('article','ArticleController');
+	Route::get('/article/filter',['as'=>'articleFilter', 'uses'=>'ArticleController@filter']);
 
 	Route::resource('task','TaskController');
 

@@ -137,12 +137,13 @@ body {
 .sidebarDate{
 	cursor: pointer;
 	border-bottom: 1px solid #676767;
-	height: 120px;
-	margin: 15px 0px;
+	height: 140px;
+	margin-top: 15px;
 }
 .sidebarDay{
 	text-align: center;
 	font: 50pt arial;
+	margin-bottom: 10px;
 }
 .sidebarMonth{
 	text-align: center;
@@ -161,6 +162,26 @@ body {
 }
 .dateMonth{
 	display: none;
+}
+.dateMonth div>div{
+	margin-bottom: 2px;
+	width: 10%;
+	text-align: center;
+	font-size: 8pt;
+	color: #939292;
+	font-weight: bold;
+	font-family: Arial;
+}
+.dateMonth .currentMonth{
+	color: #fff;
+}
+.dateMonth .weekend{
+	color: #D6BCBC;
+}
+.dateMonth .currentDay{
+	border: 1px solid #000;
+	border-radius: 1px;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
 }
 
 @media (max-width: 992px) {

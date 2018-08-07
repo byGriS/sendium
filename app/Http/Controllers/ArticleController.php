@@ -104,4 +104,15 @@ class ArticleController extends Controller{
 	public function uploadImage(ArticleUploadRequest $request){
 		return $this->articleModel->uploadImage($request->file('upload'));
 	}
+
+	public function filter2(Request $request, $title){
+		dd($request);
+		$category = Category::whereTitle($request->category)->first();
+		if ($category == null){
+			$articles = $this->articleModel->getAll(config('app.pagination.article'));
+		}else{
+			$articles = $this->articleModel->getByCategory($category, config('app.pagination.article'));
+		}
+		return view('articles.index',compact('articles'));
+	}
 }
