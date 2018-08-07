@@ -29,8 +29,8 @@
 				<div>Январь</div>
 				<div>Январь</div>
 			</div>
-			<div class="flex ">
-				<div>2018</div>
+			<div class="sidebarMonth">
+				{{$month}} {{$date->format('Y')}}
 			</div>
 		</div>
 	</div>
