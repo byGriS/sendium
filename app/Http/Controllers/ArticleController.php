@@ -10,8 +10,6 @@ use App\Repository\CategoryRepository;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Article\ArticleUploadRequest;
 
-use Illuminate\Support\Facades\Input;
-
 class ArticleController extends Controller{
 	
 	protected $articleModel;
@@ -105,14 +103,20 @@ class ArticleController extends Controller{
 		return $this->articleModel->uploadImage($request->file('upload'));
 	}
 
-	public function filter2(Request $request, $title){
-		dd($request);
+	public function filter(Request $request){
 		$category = Category::whereTitle($request->category)->first();
 		if ($category == null){
-			$articles = $this->articleModel->getAll(config('app.pagination.article'));
+			return redirect('article');
 		}else{
 			$articles = $this->articleModel->getByCategory($category, config('app.pagination.article'));
 		}
-		return view('articles.index',compact('articles'));
+		$categories = $this->categoryModel->getAll();
+		return view('articles.index',compact('articles', 'categories'));
+	}
+
+	public function search(Request $request){
+		$articles = $this->articleModel->search($request->search, config('app.pagination.article'));
+		$categories = $this->categoryModel->getAll();
+		return view('articles.index',compact('articles', 'categories'));
 	}
 }

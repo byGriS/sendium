@@ -39,8 +39,12 @@ class ArticleRepository extends BaseRepository{
 		return $this->model->orderBy('created_at','desc')->paginate($paginate);
 	}
 
-	public function search($serach, $paginate){
-
+	public function search($search, $paginate){
+		return $this->model->where('preview','like','%'.$search.'%')
+			->orWhere('text','like','%'.$search.'%')
+			->orWhere('title','like','%'.$search.'%')
+			->orderBy('created_at','desc')
+			->paginate($paginate);
 	}
 
 	public function getByCategory($category, $paginate){

@@ -10,7 +10,17 @@ class CategoryRepository extends BaseRepository{
 		$this->model = $category;
 	}
 
-		public function getAll(){
+	public function getAll(){
 		return $this->model->all();
 	}
+
+	public function add(Category $category, $title){
+		$category->title = $title;
+		$category->save();
+	}
+
+	public function update(Category $category, $title){
+		$this->add($category, $title);
+	}
+
 }

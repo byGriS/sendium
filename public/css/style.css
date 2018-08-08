@@ -321,9 +321,29 @@ body {
 		display: block;
 	}
 	.sidebarDate{
-		display: none;
+		display: none!important;
 	}
 }
+
+/************** CATEGORIES ***************/
+.newCategory{
+	width: 300px;
+	background: red;
+}
+.listCategory{
+	min-width: 400px;
+	background:blue;
+}
+
+@media (max-width: 992px) {
+	.newCategory{
+		min-width: 300px;
+	background: red;
+		flex: 1;
+	}
+}
+/*****************************************/
+
 
 /***************** ОБЩИЕ КЛАССЫ ****************/
 .center{
@@ -346,4 +366,10 @@ body {
 }
 .errorInput{
 	border: 1px solid red!important;
+}
+.test{
+	background: red;
+	margin: 10px;
+	height: 200px;
+	min-width: 300px;
 }
