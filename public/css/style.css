@@ -327,18 +327,16 @@ body {
 
 /************** CATEGORIES ***************/
 .newCategory{
-	width: 300px;
-	background: red;
+	min-width: 300px;
+	padding: 15px;
 }
 .listCategory{
 	min-width: 400px;
-	background:blue;
+	padding: 15px;
 }
 
 @media (max-width: 992px) {
 	.newCategory{
-		min-width: 300px;
-	background: red;
 		flex: 1;
 	}
 }
