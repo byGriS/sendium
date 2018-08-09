@@ -11,6 +11,9 @@
 .flexWrap{
   flex-wrap: wrap;
 }
+.flexFlowRowWrap{
+  flex-flow: row wrap;
+}
 .flexDirectionRowRev{
   flex-direction: row-reverse;
 }
@@ -25,6 +28,12 @@
 }
 .flexItemAlignSelfStretch{
   align-self: stretch;
+}
+.flexAlignContentStart{
+  align-content: flex-start;
+}
+.flexJustifyContentStart{
+  justify-content: flex-start;
 }
 .flexJustifyContentCenter {
   justify-content: center;

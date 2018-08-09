@@ -48,19 +48,8 @@ function InputFocus(elem){
 
 // фильтруем по категории
 function categoryFilterChange(elem){
-	$("#filterCategory").submit();
-	// $.ajax({
-	// 	type: "POST",
-	// 	url: '/article/filter',
-	// 	data: {category: $(elem).val(), _token:$('meta[name="csrf-token"]').attr('content')},
-	// 	success: function(data) {
-	// 		$(".articleWrapper").html(data);
-	// 	}
-	// });
-	
+	$("#filterCategory").submit();	
 }
-
-
 
 /******* Calendar **********/
 function ToggleCalendar(elem){
@@ -74,4 +63,9 @@ function ToggleCalendar(elem){
 }
 /***************************/
 
-
+/******* Categories *********/
+function ShowTitleCategoryForm(){
+	event.preventDefault();
+	alert("op");
+}
+/****************************/
