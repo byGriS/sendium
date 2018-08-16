@@ -64,8 +64,45 @@ function ToggleCalendar(elem){
 /***************************/
 
 /******* Categories *********/
-function ShowTitleCategoryForm(){
+//нажимаем кнопку Изменить
+function ShowTitleCategoryForm(elem){
 	event.preventDefault();
-	alert("op");
+	var form = elem.parentElement;
+	form.getElementsByTagName("label")[0].hidden = true;
+	form.getElementsByTagName("input")[3].type = 'text';
+	form.getElementsByClassName('btn-change')[0].hidden = true;
+	form.getElementsByClassName('btn-delete')[0].hidden = true;
+	form.getElementsByClassName('btn-complete')[0].hidden = false;
+	form.getElementsByClassName('btn-cancel')[0].hidden = false;
+}
+
+function CancelTitleCategoryForm(elem){
+	event.preventDefault();
+	var form = elem.parentElement;
+	form.getElementsByTagName("label")[0].hidden = false;
+	form.getElementsByTagName("input")[3].type = 'hidden';
+	form.getElementsByClassName('btn-change')[0].hidden = false;
+	form.getElementsByClassName('btn-delete')[0].hidden = false;
+	form.getElementsByClassName('btn-complete')[0].hidden = true;
+	form.getElementsByClassName('btn-cancel')[0].hidden = true;
+}
+
+function EditTitleCategoryForm(elem){
+	event.preventDefault();
+	var form = elem.parentElement;
+	var index = form.getElementsByTagName("input")[2].value;
+	var title = form.getElementsByTagName("input")[3].value;
+	var div = form.parentElement;
+	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+	$.ajax({
+		url: '/category/'+index,
+		type: 'PUT',
+		data: {'_token': CSRF_TOKEN, 'title': title},
+		success: function (data) {
+			alert(data);
+        div = data;
+    }
+
+	});
 }
 /****************************/

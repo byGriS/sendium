@@ -41,7 +41,8 @@ class CategoryController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function update(Request $request, Category $category){
-		$this->categoryModel->update($category, $request->title);
+		//$this->categoryModel->update($category, $request->title);
+		return "test";
 	}
 
 	/**
