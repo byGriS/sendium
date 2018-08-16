@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repository\CategoryRepository;
+use App\Models\Category;
 
 class CategoryController extends Controller{
 	protected $categoryModel;
@@ -41,8 +42,9 @@ class CategoryController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function update(Request $request, Category $category){
-		//$this->categoryModel->update($category, $request->title);
-		return "test";
+		$this->categoryModel->update($category, $request->title);
+		return $category->title;
+		//return view('categories.formCategory',compact('category'));
 	}
 
 	/**
