@@ -19,7 +19,7 @@ class CategoryController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function index(){
-		$categories = $this->categoryModel->getAll();
+		$categories = $this->categoryModel->getAllnFirst();
 		return view('categories.index',compact('categories'));
 	}
 
@@ -55,6 +55,6 @@ class CategoryController extends Controller{
 	*/
 	public function destroy($id){
 		$this->categoryModel->destroy($id);
-		return redirect('article');
+		return redirect('category');
 	}
 }	

@@ -12,7 +12,7 @@ class ArticleRepository extends BaseRepository{
 
 	protected $category;
 
-	public function __construct(Article $article, Category $category){
+	public function __construct(Article $article = null, Category $category = null){
 		$this->model = $article;
 		$this->category = $category;
 	}
@@ -60,5 +60,9 @@ class ArticleRepository extends BaseRepository{
 		$file->move(public_path().'/'.Auth::user()->id.'/articles/', $filename);
 		$url = "/".Auth::user()->id."/articles/" . $filename;
 		return response('{"uploaded": 1,"fileName": "'.$filename.'","url": "'.$url.'"}');
+	}
+
+	public function resetCategory(Category $category){
+		Article::whereCategoryId($category->id)->update(['category_id' => 1]);
 	}
 }
