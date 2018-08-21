@@ -390,6 +390,27 @@ body {
 	background: #7A98CF;
 
 }
+.taskForm{
+	padding: 10px;
+}
+.taskForm input[type='text']{
+	margin-bottom: 10px;
+	display: block;
+	padding: .375rem .75rem;
+	font-size: .9rem;
+	line-height: 1.6;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	font-weight: bold;
+}
+.taskForm input[type='text']::-moz-placeholder { color: #969BA0; font-weight: normal;}
+.taskForm input[type='text']::-webkit-input-placeholder { color: #969BA0; font-weight: normal;}
+.taskForm select{
+	margin-bottom: 10px;
+}
 
 /*******************************************/
 
