@@ -411,6 +411,22 @@ body {
 .taskForm select{
 	margin-bottom: 10px;
 }
+.tasksBlock label{
+	min-width: 150px;
+}
+.taskForm textarea {
+  padding: 3px 6px;
+  border: 1px solid #8c8f91;
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #282829;
+  width: 100%;
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+  
+}
 
 /*******************************************/
 
