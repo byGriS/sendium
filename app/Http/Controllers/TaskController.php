@@ -21,8 +21,17 @@ class TaskController extends Controller{
 	public function index(){
 		$tasks = $this->taskModel->getAll();
 		$date = Carbon::now();
-		$tasksDay = array_fill(0, 7, array());
-		
+		$dateService = Carbon::now();
+		$tasksDay = array_fill(0, 7, array());	
+		for($i = 0; $i < 7; $i++){
+			foreach($tasks as $task){
+				 if ($task->deadline->format("Y-m-d") == $dateService->format("Y-m-d")){
+				 	array_push($tasksDay[$i], $task);
+				 }
+			}
+			$dateService = $dateService->addDays(1);
+		}
+
 		return view('tasks.index', compact('tasks', 'date','tasksDay'));
 	}
 
@@ -31,6 +40,8 @@ class TaskController extends Controller{
 	}
 
 	public function store(Request $request){
+		$this->taskModel->add(new Task(), $request->all());
+		return redirect('task');
 	}
 
 	public function show($id){

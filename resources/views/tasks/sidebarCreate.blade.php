@@ -4,7 +4,7 @@
 	<div class="sidebarWrapper">
 		<div class="flex flexDirectionColumn flexAlignItemsCenter">
 			<div class="sidebarBlock">
-				<button class="width100 btn btn-sm btn-success" onClick="newArticleOnClick();">Добавить</button>
+				<button class="width100 btn btn-sm btn-success" onClick="AddTask();">Добавить</button>
 			</div>
 		</div>
 	</div>

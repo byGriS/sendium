@@ -378,17 +378,25 @@ body {
 }
 .tasksDay .task{
 	border-radius: 3px;
-	margin: 2px;
+	margin: 4px 2px;
 	padding: 3px;
 	font-size: 10pt;
 	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	color: #333;
 }
-.status-1{
+.priority-0{
+	border: 1px solid #D2D2D2;
+}
+.priority-1{
 	background: #D2D2D2;
 }
-.status-2{
+.priority-2{
 	background: #7A98CF;
-
+}
+.priority-3{
+	background: #EE6363;
 }
 .taskForm{
 	padding: 10px;

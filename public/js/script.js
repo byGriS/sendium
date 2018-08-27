@@ -107,3 +107,15 @@ function CategoryFormChange(form){
 	form.getElementsByClassName('btn-cancel')[0].hidden = !form.getElementsByClassName('btn-cancel')[0].hidden;
 }
 /****************************/
+
+
+/********** TASKS ***********/
+function AddTask(){
+	var form = document.forms.taskForm;
+	if (form['title'].value == ""){
+		form['title'].classList.add('errorInput');
+	}else{
+		form.submit();
+	}
+}
+/****************************/

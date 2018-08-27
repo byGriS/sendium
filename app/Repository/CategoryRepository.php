@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use Illuminate\Support\Facades\Auth;
 use App\Repository\BaseRepository;
 use App\Models\Category;
 use App\Repository\ArticleRepository;
@@ -12,11 +13,11 @@ class CategoryRepository extends BaseRepository{
 	}
 
 	public function getAll(){
-		return $this->model->all();
+		return $this->model->where('owner_id',Auth::user()->id)->get();
 	}
 
 	public function getAllnFirst(){
-return $this->model->where('id','<>', 1)->get();
+return $this->model->where('owner_id',Auth::user()->id)->where('id','<>', 1)->get();
 	}
 
 	public function add(Category $category, $title){

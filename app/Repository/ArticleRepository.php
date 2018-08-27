@@ -36,11 +36,11 @@ class ArticleRepository extends BaseRepository{
 	}
 
 	public function getAll($paginate){
-		return $this->model->orderBy('created_at','desc')->paginate($paginate);
+		return $this->model->where('owner_id',Auth::user()->id)->orderBy('created_at','desc')->paginate($paginate);
 	}
 
 	public function search($search, $paginate){
-		return $this->model->where('preview','like','%'.$search.'%')
+		return $this->model->where('owner_id',Auth::user()->id)->where('preview','like','%'.$search.'%')
 			->orWhere('text','like','%'.$search.'%')
 			->orWhere('title','like','%'.$search.'%')
 			->orderBy('created_at','desc')
@@ -48,7 +48,7 @@ class ArticleRepository extends BaseRepository{
 	}
 
 	public function getByCategory($category, $paginate){
-		return $this->model->where('category_id','=',$category->id)->orderBy('created_at','desc')->paginate($paginate);
+		return $this->model->where('owner_id',Auth::user()->id)->where('category_id','=',$category->id)->orderBy('created_at','desc')->paginate($paginate);
 	}
 
 	public function update($article, $input){

@@ -12,9 +12,9 @@
 				</div>
 				<div class="tasksDayContent">
 					@foreach($tasksDay[$i] as $task)
-					<div class="task status-1">
+					<a href="{{route('task.edit',$task->id)}}" class="task priority-{{$task->priority}}">
 						{{$task->title}}
-					</div>
+					</a>
 					@endforeach
 				</div>
 			</div>
