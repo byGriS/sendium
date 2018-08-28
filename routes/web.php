@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function(){
 	Route::get('/articles/search',['as'=>'articleSearch', 'uses'=>'ArticleController@search']);
 
 	Route::resource('task','TaskController');
+	Route::post('task/{id}/complete',['as'=>'taskComplete','uses'=>'TaskController@complete']);
 
 	Route::resource('project','ProjectController');
 

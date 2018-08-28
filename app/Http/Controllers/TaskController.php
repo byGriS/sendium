@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Task;
 use App\Repository\TaskRepository;
+use App\Services\PriorityConvert;
 
 
 class TaskController extends Controller{
@@ -44,7 +45,13 @@ class TaskController extends Controller{
 		return redirect('task');
 	}
 
-	public function show($id){
+	public function show(Task $task){
+		$task->priorityStr = PriorityConvert::ToString($task->priority);
+		return view('tasks.show', compact('task'));
+	}
+
+	public function complete(Task $task){
+		dd($task);
 	}
 
 	public function edit($id){

@@ -433,7 +433,10 @@ body {
   outline: none;
   resize: vertical;
   box-sizing: border-box;
-  
+}
+.taskShow .title{
+	font-size: 14pt;
+	font-weight: bold;
 }
 
 /*******************************************/
