@@ -437,6 +437,10 @@ body {
 .taskShow .title{
 	font-size: 14pt;
 	font-weight: bold;
+	margin-bottom: 10px;
+}
+.taskShow .text{
+	text-align: justify;
 }
 
 /*******************************************/
@@ -451,6 +455,9 @@ body {
 }
 .noWhiteSpace{
 	white-space: nowrap;
+}
+.whiteSpacePreWrap{
+	white-space: pre-wrap;
 }
 .width33{
 	width: 33%;

@@ -9,15 +9,16 @@
 
 
 <div class="flex1 flex">
-		<form id="taskForm" method="post" action="{{route('task.store')}}" class="taskForm flex1 flex flexDirectionColumn">
+		<form id="taskForm" method="post" action="{{route('task.update', $task->id)}}" class="taskForm flex1 flex flexDirectionColumn">
 			{{csrf_field()}}
-			<input type="text" class="" name="title" placeholder="Заголовок" value="{{old('title')}}" required onfocus="InputFocus(this);"/>
+			@method('PUT')
+			<input type="text" class="" name="title" placeholder="Заголовок" value="{{$task->title}}" required onfocus="InputFocus(this);"/>
 			<div class="tasksBlock flex1 flex flexDirectionColumn">
 				<div class="flex flexFlowRowWrap flexAlignItemsCenter">
 					<label>Завершение задачи</label>
 					<div>
 						<div class='input-group date' >
-							<input id="datetimepicker" type="text" name="deadline" class="" value="{{date('d.m.Y')}}" readonly required/>
+							<input id="datetimepicker" type="text" name="deadline" class="" value="{{$task->deadline->format('d.m.Y')}}" readonly required/>
 						</div>
 					</div>
 				</div>
@@ -25,21 +26,21 @@
 					<label>Приоритет</label>
 					<div>
 						<select class="custom-select form-control" name="priority">
-							<option value='0'>Второстепенная</option>
-							<option selected value='1'>Обычная</option>
-							<option value='2'>Важная</option>
-							<option value='3'>Очень важная</option>
+							<option @if($task->priority == 0) selected @endif value='0'>Второстепенная</option>
+							<option @if($task->priority == 1) selected @endif  value='1'>Обычная</option>
+							<option @if($task->priority == 2) selected @endif  value='2'>Важная</option>
+							<option @if($task->priority == 3) selected @endif  value='3'>Очень важная</option>
 						</select>
 					</div>
 				</div>
 				<div class="flex flexDirectionColumn flex1">
 					<label>Описание (если необоходимо)</label>
-					<textarea class="flex1" name="text"></textarea>
+					<textarea class="flex1" name="text">{!!$task->text!!}</textarea>
 				</div>
 			</div>
 		</form>
 
-	@include('tasks.sidebarCreate')
+	@include('tasks.sidebarEdit')
 </div>
 
 <script src="{{ asset('js/datetimepicker.js') }}" defer></script>

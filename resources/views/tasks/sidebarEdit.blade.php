@@ -4,13 +4,22 @@
 	<div class="sidebarWrapper">
 		<div class="flex flexDirectionColumn flexAlignItemsCenter">
 			<div class="sidebarBlock">
-				<button class="width100 btn btn-sm btn-success" onClick="AddTask();">Добавить</button>
+				<button class="width100 btn btn-sm btn-primary" onclick="TaskEdit()">Изменить</button>
 			</div>
 			<div class="sidebarBlock">
-				<button type="submit" class="width100 btn btn-sm btn-success" onClick="newArticleOnClick();">Изменить</button>	
+				<form method="POST" action="{{route('taskComplete',$task->id)}}">
+					@csrf
+					<input type='hidden' name='id' value='{{$task->id}}'/>
+					<button class="width100 btn btn-sm btn-success">Завершить</button>
+				</form>
 			</div>
 			<div class="sidebarBlock">
-				<button class="width100 btn btn-sm btn-danger" onClick="ArticleFormDelete();">Удалить</button>
+				<form method="POST" action="{{route('task.destroy',$task->id)}}">
+					@csrf
+					@method('DELETE')
+					<input type='hidden' name='id' value='{{$task->id}}'/>
+					<button class="width100 btn btn-sm btn-danger">Удалить</button>
+				</form>
 			</div>
 		</div>
 	</div>

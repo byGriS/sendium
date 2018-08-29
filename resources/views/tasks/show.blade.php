@@ -8,6 +8,10 @@
 		<div class="title">{{$task->title}}</div>
 		<div class="tasksBlock flex1 flex flexDirectionColumn">
 			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
+				<label><b>Статус</b></label>
+				<label>{{$task->statusStr}}</label>
+			</div>
+			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
 				<label><b>Завершение задачи</b></label>
 				<label>{{$task->deadline}}</label>
 			</div>
@@ -18,8 +22,8 @@
 			@if ($task->text != "")
 			<div class="flex flexDirectionColumn flex1">
 				<label>Описание</label>
-				<div class="flex1">
-					{!!$task->text!!}
+				<div class="flex1 text">
+					{!! $task->text !!}
 				</div>
 			</div>
 			@endif

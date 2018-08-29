@@ -14,7 +14,12 @@
 				</form>
 			</div>
 			<div class="sidebarBlock">
-				<button class="width100 btn btn-sm btn-danger" onclick="TaskDelete()">Удалить</button>
+				<form method="POST" action="{{route('task.destroy',$task->id)}}">
+					@csrf
+					@method('DELETE')
+					<input type='hidden' name='id' value='{{$task->id}}'/>
+					<button class="width100 btn btn-sm btn-danger">Удалить</button>
+				</form>
 			</div>
 		</div>
 	</div>

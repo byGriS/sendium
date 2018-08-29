@@ -119,5 +119,14 @@ function AddTask(){
 	}
 }
 
+function TaskEdit(){
+	let form = document.forms.taskForm;
+	if (form['title'].value == ""){
+		form['title'].classList.add('errorInput');
+	}else{
+		form.submit();
+	}
+}
+
 
 /****************************/

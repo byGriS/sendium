@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Task;
 use App\Repository\TaskRepository;
-use App\Services\PriorityConvert;
+use App\Services\Priority;
+use App\Services\Status;
 
 
 class TaskController extends Controller{
@@ -46,20 +47,29 @@ class TaskController extends Controller{
 	}
 
 	public function show(Task $task){
-		$task->priorityStr = PriorityConvert::ToString($task->priority);
+		$task->priorityStr = Priority::ToString($task->priority);
+		$task->statusStr = Status::ToString($task->status);
+		$task->text = str_replace("\r\n","<br/>", $task->text);
 		return view('tasks.show', compact('task'));
 	}
 
 	public function complete(Task $task){
-		dd($task);
+		$this->taskModel->complete($task);
+		return redirect('task');
 	}
 
-	public function edit($id){
+	public function edit(Task $task){
+		$this->taskModel->convertDateToFront($task);
+		return view('tasks.edit', compact('task'));
 	}
 
-	public function update(Request $request, $id){
+	public function update(Request $request, Task $task){
+		$this->taskModel->update($task, $request->all());
+		return redirect('task');
 	}
 
-	public function destroy($id){
+	public function destroy(Task $task){
+		$this->taskModel->destroy($task->id);
+		return redirect('task');
 	}
 }

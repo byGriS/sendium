@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Repository\BaseRepository;
 use App\Models\Task;
 use App\Services\ConvertDateSQL;
+use App\Services\Status;
 
 class TaskRepository extends BaseRepository{
 	public function __construct(Task $task){
@@ -13,7 +14,7 @@ class TaskRepository extends BaseRepository{
 	}
 
 	public function getAll(){
-		$tasks = $this->model->where('owner_id', Auth::user()->id)->orderBy('deadline')->get();
+		$tasks = $this->model->where('owner_id', Auth::user()->id)->where('status','<>',Status::COMPLETE)->orderBy('deadline')->get();
 		foreach($tasks as &$task){
 			$task->deadline = ConvertDateSQL::FromSQL($task->deadline);
 		}
@@ -32,6 +33,15 @@ class TaskRepository extends BaseRepository{
 	}
 
 	public function update(Task $task, $inputs){
-		
+		$this->add($task, $inputs);
+	}
+
+	public function complete(Task $task){
+		$task->status = Status::COMPLETE;
+		$task->save();
+	}
+
+	public function convertDateToFront(Task $task){
+		$task->deadline = ConvertDateSQL::FromSQL($task->deadline);
 	}
 }

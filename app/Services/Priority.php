@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class PriorityConvert{
+class Priority{
 	public static function ToString($value){
 		switch ($value){
 			case 0: return "Второстепенная";
