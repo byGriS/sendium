@@ -371,6 +371,7 @@ body {
 	font-size:20pt;
 	font-weight: bold;
 	border-bottom: 1px solid #999;
+
 }
 .tasksDay .tasksDayContent{
 	height: 300px;
@@ -387,16 +388,19 @@ body {
 	color: #333;
 }
 .priority-0{
-	border: 1px solid #D2D2D2;
+	background: 1px solid #F5F5F5!important;
 }
 .priority-1{
-	background: #D2D2D2;
+	background: #D2D2D2!important;
 }
 .priority-2{
-	background: #7A98CF;
+	background: #FDF0AA!important;
 }
 .priority-3{
-	background: #EE6363;
+	background: #7A98CF!important;
+}
+.OVERDUE{
+	background: #FB3838!important;
 }
 .taskForm{
 	padding: 10px;
@@ -423,16 +427,16 @@ body {
 	min-width: 150px;
 }
 .taskForm textarea {
-  padding: 3px 6px;
-  border: 1px solid #8c8f91;
-  border-radius: 2px;
-  font-size: 13px;
-  line-height: 1.8;
-  color: #282829;
-  width: 100%;
-  outline: none;
-  resize: vertical;
-  box-sizing: border-box;
+	padding: 3px 6px;
+	border: 1px solid #8c8f91;
+	border-radius: 2px;
+	font-size: 13px;
+	line-height: 1.8;
+	color: #282829;
+	width: 100%;
+	outline: none;
+	resize: vertical;
+	box-sizing: border-box;
 }
 .taskShow .title{
 	font-size: 14pt;
@@ -442,6 +446,30 @@ body {
 .taskShow .text{
 	text-align: justify;
 }
+.tasksList .task{
+	border-radius: 4px;
+	border: 1px solid #A4A4A4;
+	background: #EDEDED;
+	margin: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+	cursor: pointer;
+	transition: background 0.15s linear;
+	text-decoration: none;
+	color: #333;
+}
+.tasksList .task:hover{
+	background: #B2D3DB;
+}
+.tasksList .task .title{
+	margin-right: 20px;
+}
+.tasksList .task .status,
+.tasksList .task .deadline{
+	width: 100px;
+	text-align: center;
+}
+
 
 /*******************************************/
 

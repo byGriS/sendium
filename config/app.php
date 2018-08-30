@@ -214,6 +214,7 @@ return [
 
     'pagination' => [
         'article' => 3,
+        'task' => 10
     ]
 
 ];

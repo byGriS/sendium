@@ -7,6 +7,8 @@ use App\Repository\BaseRepository;
 use App\Models\Task;
 use App\Services\ConvertDateSQL;
 use App\Services\Status;
+use App\Services\Priority;
+use Carbon\Carbon;
 
 class TaskRepository extends BaseRepository{
 	public function __construct(Task $task){
@@ -17,6 +19,24 @@ class TaskRepository extends BaseRepository{
 		$tasks = $this->model->where('owner_id', Auth::user()->id)->where('status','<>',Status::COMPLETE)->orderBy('deadline')->get();
 		foreach($tasks as &$task){
 			$task->deadline = ConvertDateSQL::FromSQL($task->deadline);
+		}
+		unset($task);
+		return $tasks;
+	}
+
+	public function getAllPaginate(){
+		$tasks = $this->model->where('owner_id', Auth::user()->id)->where('status','<>',Status::COMPLETE)->orderBy('deadline')->paginate(config('app.pagination.task'));
+		foreach($tasks as &$task){
+			$task->deadline = ConvertDateSQL::FromSQL($task->deadline);
+			$task->priorityStr = Priority::ToString($task->priority);
+			if ($task->deadline<Carbon::today()){
+				$task->status = Status::OVERDUE;
+				$task->overdue = true;
+			}else{
+				$task->overdue = false;
+			}
+			$task->statusStr = Status::ToString($task->status);
+
 		}
 		unset($task);
 		return $tasks;

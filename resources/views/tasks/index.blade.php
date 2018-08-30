@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex1 flex">
-	<div class="flex1">
+	<div class="flex1 flex flexDirectionColumn">
 		<div class="tasksTape flex">
 			@for($i = 0; $i < 7; $i++)
 			<div class="tasksDay flex1">	
@@ -20,8 +20,10 @@
 			</div>
 			@endfor
 		</div>
-		<div class="tasksList">
-			
+		<div class="tasksList flex1">
+			<div class="title">
+			</div>
+			@include('tasks.wrapperTasks')
 		</div>
 	</div>
 	@include('tasks.sidebarIndex')
