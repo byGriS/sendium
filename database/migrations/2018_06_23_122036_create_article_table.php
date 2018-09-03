@@ -13,11 +13,16 @@ class CreateArticleTable extends Migration{
             $table->text('preview')->nullable();
             $table->text('text')->nullable();
             $table->unsignedInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            
             $table->unsignedInteger('owner_id');
-            $table->foreign('owner_id')->references('id')->on('users');
+            
             $table->timestamps();
         });
+
+        Schema::table('articles', function($table) {
+           $table->foreign('category_id')->references('id')->on('categories');
+           $table->foreign('owner_id')->references('id')->on('users');
+       });
     }
 
     public function down()

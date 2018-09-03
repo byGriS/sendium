@@ -16,9 +16,13 @@ class CreateCategoryTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('owner_id');
-            $table->foreign('owner_id')->references('id')->on('users');
+           
             $table->string('title', 255);
         });
+
+        Schema::table('categories', function($table) {
+          $table->foreign('owner_id')->references('id')->on('users');
+     });
     }
 
     /**

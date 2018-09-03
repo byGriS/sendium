@@ -6,7 +6,7 @@
 		<div class="tasksTape flex">
 			@for($i = 0; $i < 7; $i++)
 			<div class="tasksDay flex1">	
-				<div class="header">
+				<div class="header @if(($date->format('w') == 6) || ($date->format('w') == 0)) weekend @endif">
 					{{$date->format('d.m')}}
 					<?php $date->addDay(); ?>
 				</div>
@@ -21,7 +21,8 @@
 			@endfor
 		</div>
 		<div class="tasksList flex1">
-			<div class="title">
+			<div class="tasksListTitle">
+				Список задач
 			</div>
 			@include('tasks.wrapperTasks')
 		</div>

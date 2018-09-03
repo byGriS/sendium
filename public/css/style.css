@@ -446,6 +446,14 @@ body {
 .taskShow .text{
 	text-align: justify;
 }
+.tasksTape{
+	height: 250px;
+}
+.tasksListTitle{
+	margin: 10px;
+	font-size: 16pt;
+	font-weight: bold;
+}
 .tasksList .task{
 	border-radius: 4px;
 	border: 1px solid #A4A4A4;
@@ -468,6 +476,9 @@ body {
 .tasksList .task .deadline{
 	width: 100px;
 	text-align: center;
+}
+.weekend{
+	background: #96B2FA;
 }
 
 
