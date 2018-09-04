@@ -19,7 +19,7 @@
 			</div>
 			<div class="sidebarBlock">
 				Поиск
-				<form class="form flex" method="get" action="{{route('articleSearch')}}">			
+				<form class="flex" method="get" action="{{route('articleSearch')}}">			
 					<input type="text" name="search" class="form-control-sm">
 					<button type="submit" class="btn btn-sm"><img src="https://png.icons8.com/material/18/000000/search.png"></button>
 				</form>

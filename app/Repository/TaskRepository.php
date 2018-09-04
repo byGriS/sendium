@@ -48,6 +48,11 @@ class TaskRepository extends BaseRepository{
 		$task->priority = $inputs['priority'];
 		$task->text = $inputs['text'];
 		$task->owner_id = Auth::user()->id;
+		if ($inputs['projectID'] == 0){
+			$task->project_id = null;
+		}else{
+			$task->project_id = $inputs['projectID'];
+		}
 		$task->status = 0;
 		$task->save();
 	}

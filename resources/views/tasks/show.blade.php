@@ -13,11 +13,15 @@
 			</div>
 			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
 				<label><b>Завершение задачи</b></label>
-				<label>{{$task->deadline}}</label>
+				<label>{{$task->deadline->format('d.m.Y')}}</label>
 			</div>
 			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
 				<label><b>Приоритет</b></label>
 				<label>{{$task->priorityStr}}</label>
+			</div>
+			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
+				<label><b>Проект</b></label>
+				<label>@if ($task->project_id == null) Без проекта @else {{$task->project->title}}@endif</label>
 			</div>
 			@if ($task->text != "")
 			<div class="flex flexDirectionColumn flex1">

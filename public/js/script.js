@@ -130,3 +130,26 @@ function TaskEdit(){
 
 
 /****************************/
+
+/********* PROJECTS *********/
+function SubmitProject(){
+	let form = document.forms.projectForm;
+	if (form['title'].value == ""){
+		form['title'].classList.add('errorInput');
+	}else{
+		form.submit();
+	}
+}
+function NonDeadlineChange(){
+	let datetimepicker = document.getElementById('datetimepicker');
+
+	datetimepicker.disabled = !datetimepicker.disabled;
+	if (datetimepicker.disabled){
+		datetimepicker.value = "";
+	}else{
+		let now = new Date();
+		$('#datetimepicker').datepicker('update', 'now');
+	}
+
+}
+/****************************/

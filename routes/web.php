@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function(){
 	Route::post('task/{task}/complete',['as'=>'taskComplete','uses'=>'TaskController@complete']);
 
 	Route::resource('project','ProjectController');
+		Route::post('project/{project}/complete',['as'=>'projectComplete','uses'=>'ProjectController@complete']);
 
 	Route::resource('contact','ContactController');
 

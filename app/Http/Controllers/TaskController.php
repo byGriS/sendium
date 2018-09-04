@@ -38,7 +38,8 @@ class TaskController extends Controller{
 	}
 
 	public function create(){
-		return view('tasks.create');
+		$projects = Auth::user()->projects;
+		return view('tasks.create', compact('projects'));
 	}
 
 	public function store(Request $request){
@@ -50,6 +51,7 @@ class TaskController extends Controller{
 		$task->priorityStr = Priority::ToString($task->priority);
 		$task->statusStr = Status::ToString($task->status);
 		$task->text = str_replace("\r\n","<br/>", $task->text);
+		$this->taskModel->convertDateToFront($task);
 		return view('tasks.show', compact('task'));
 	}
 
@@ -60,7 +62,8 @@ class TaskController extends Controller{
 
 	public function edit(Task $task){
 		$this->taskModel->convertDateToFront($task);
-		return view('tasks.edit', compact('task'));
+		$projects = Auth::user()->projects;
+		return view('tasks.edit', compact('task', 'projects'));
 	}
 
 	public function update(Request $request, Task $task){

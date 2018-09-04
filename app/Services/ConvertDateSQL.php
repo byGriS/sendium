@@ -11,6 +11,8 @@ class ConvertDateSQL{
 	}
 
 	public static function FromSQL($date){
+		if ($date == null)
+			return null;
 		return Carbon::parse($date);
 	}
 }

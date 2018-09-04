@@ -62,7 +62,7 @@ body {
 	position: fixed;
 	top: 0;
 	background: #343a40;
-	font-size: 11pt;
+	font-size: 10pt;
 	text-align: center;
 }
 .navigation ul{
@@ -179,9 +179,9 @@ body {
 	color: #D6BCBC;
 }
 .dateMonth .currentDay{
-	border: 1px solid #000;
-	border-radius: 1px;
-	box-shadow: 0 0 10px rgba(0,0,0,1);
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 0 0 5px rgba(255,255,255,1);
 }
 
 @media (max-width: 992px) {
@@ -399,7 +399,7 @@ body {
 .priority-3{
 	background: #7A98CF!important;
 }
-.OVERDUE{
+.task .OVERDUE{
 	background: #FB3838!important;
 }
 .taskForm{
@@ -477,12 +477,46 @@ body {
 	width: 100px;
 	text-align: center;
 }
-.weekend{
-	background: #96B2FA;
+.tasksDay .weekend{
+	background: #72B5E9;
 }
-
-
 /*******************************************/
+
+/****************** PROJECTS ****************/
+.projectShow .title{
+	font-size: 14pt;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.projectShow .text{
+	text-align: justify;
+}
+.projectShow label{
+	margin-right: 10px;
+}
+.projectsWrapper .project{
+	border-radius: 4px;
+	border: 1px solid #A4A4A4;
+	background: #EDEDED;
+	margin: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+	cursor: pointer;
+	transition: background 0.15s linear;
+	text-decoration: none;
+	color: #444;
+}
+.project:hover{
+	background: #B2D3DB;
+}
+.project .title{
+	font-size: 14pt;
+	font-weight: bold;
+}
+.project .OVERDUE{
+	background: #DD9F9F;
+}
+/********************************************/
 
 
 /***************** ОБЩИЕ КЛАССЫ ****************/
@@ -510,9 +544,39 @@ body {
 .errorInput{
 	border: 1px solid red!important;
 }
-.test{
-	background: red;
-	margin: 10px;
-	height: 200px;
-	min-width: 300px;
+.form{
+	padding: 10px;
+}
+.form input[type='text']{
+	margin-bottom: 10px;
+	display: block;
+	padding: .375rem .75rem;
+	font-size: .9rem;
+	line-height: 1.6;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	font-weight: bold;
+}
+.form input[type='text']::-moz-placeholder { color: #969BA0; font-weight: normal;}
+.form input[type='text']::-webkit-input-placeholder { color: #969BA0; font-weight: normal;}
+.form select{
+	margin-bottom: 10px;
+}
+.form textarea {
+	padding: 3px 6px;
+	border: 1px solid #8c8f91;
+	border-radius: 2px;
+	font-size: 13px;
+	line-height: 1.8;
+	color: #282829;
+	width: 100%;
+	outline: none;
+	resize: vertical;
+	box-sizing: border-box;
+}
+.formBlock label{
+	min-width: 150px;
 }
