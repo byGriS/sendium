@@ -12,7 +12,7 @@ class CreateArticleTable extends Migration{
             $table->string('title', 255);
             $table->text('preview')->nullable();
             $table->text('text')->nullable();
-            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('category_id')->nullable();
             
             $table->unsignedInteger('owner_id');
             

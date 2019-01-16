@@ -26,8 +26,11 @@ class ArticleRepository extends BaseRepository{
 			$article->preview = $text[0];
 		}
 		$article->text = $input['text'];
-		$article->category_id = $this->category->whereTitle($input['category'])->first()->id;
-		if ($user_id == null){
+		if ($input['category'] == "Без категории")
+			$article->category_id = null;
+		else
+			$article->category_id = $this->category->whereTitle($input['category'])->first()->id;
+		if (!isset($user_id)){
 			$article->owner_id = Auth::user()->id;
 		}else{
 			$article->owner_id = $user_id;
@@ -41,14 +44,16 @@ class ArticleRepository extends BaseRepository{
 
 	public function search($search, $paginate){
 		return $this->model->where('owner_id',Auth::user()->id)->where('preview','like','%'.$search.'%')
-			->orWhere('text','like','%'.$search.'%')
-			->orWhere('title','like','%'.$search.'%')
-			->orderBy('created_at','desc')
-			->paginate($paginate);
+		->orWhere('text','like','%'.$search.'%')
+		->orWhere('title','like','%'.$search.'%')
+		->orderBy('created_at','desc')
+		->paginate($paginate);
 	}
 
 	public function getByCategory($category, $paginate){
-		return $this->model->where('owner_id',Auth::user()->id)->where('category_id','=',$category->id)->orderBy('created_at','desc')->paginate($paginate);
+		if ($category != null)
+			return $this->model->where('owner_id',Auth::user()->id)->where('category_id','=',$category->id)->orderBy('created_at','desc')->paginate($paginate);
+		return $this->model->where('owner_id',Auth::user()->id)->whereNull('category_id')->orderBy('created_at','desc')->paginate($paginate);
 	}
 
 	public function update($article, $input){

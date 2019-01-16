@@ -1,11 +1,12 @@
 <div class="sidebar">
-		@include('layouts.calendar')
-		<div class="minMenu" onclick="SidebarMenuOnClick();"></div>
+	@include('layouts.calendar')
+	<div class="minMenu" onclick="SidebarMenuOnClick();"></div>
 	<div class="sidebarWrapper">
 		<div class="flex flexDirectionColumn flexAlignItemsCenter">
 			<div class="sidebarBlock">
 				Категория
 				<select id="categorySelect" class="custom-select form-control-sm flex1">
+					<option>Без категории</option>
 					@foreach($categories as $category)
 					<option @if($category->id == $article->category_id) selected @endif>{{$category->title}}</option>
 					@endforeach

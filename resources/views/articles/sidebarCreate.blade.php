@@ -6,6 +6,7 @@
 			<div class="sidebarBlock">
 				Категория
 				<select id="categorySelect" class="custom-select form-control-sm flex1">
+					<option>Без категории</option>
 					@foreach($categories as $category)
 					<option>{{$category->title}}</option>
 					@endforeach

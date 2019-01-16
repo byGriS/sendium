@@ -6,7 +6,7 @@
 		</div>
 		<div class="articleDate">
 			{{$article->created_at}}<br/>
-			{{$article->category->title}}
+			@if ($article->category == null) Без категории @else {{$article->category->title}} @endif
 		</div>
 	</div>
 	<div class="articlePreview">

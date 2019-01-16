@@ -42,6 +42,18 @@ class TaskRepository extends BaseRepository{
 		return $tasks;
 	}
 
+	public function getAllCompletedPaginate(){
+		$tasks = $this->model->where('owner_id', Auth::user()->id)->where('status','=',Status::COMPLETE)->orderBy('deadline', 'desc')->paginate(config('app.pagination.task'));
+		foreach($tasks as &$task){
+			$task->deadline = ConvertDateSQL::FromSQL($task->deadline);
+			$task->priorityStr = Priority::ToString($task->priority);
+			$task->statusStr = Status::ToString($task->status);
+
+		}
+		unset($task);
+		return $tasks;
+	}
+
 	public function add(Task $task, $inputs){
 		$task->title = $inputs['title'];
 		$task->deadline = ConvertDateSQL::ToSQL($inputs['deadline']);
@@ -64,6 +76,11 @@ class TaskRepository extends BaseRepository{
 	public function complete(Task $task){
 		$task->status = Status::COMPLETE;
 		$task->save();
+	}
+
+	public function return(Task $task){
+		$task->status = Status::WORK;
+		$task->save();	
 	}
 
 	public function convertDateToFront(Task $task){

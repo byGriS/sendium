@@ -106,7 +106,11 @@ class ArticleController extends Controller{
 	public function filter(Request $request){
 		$category = Category::whereTitle($request->category)->first();
 		if ($category == null){
-			return redirect('article');
+			if ($request->category == "Без категории"){
+				$articles = $this->articleModel->getByCategory(null, config('app.pagination.article'));
+			}else{
+				return redirect('article');
+			}
 		}else{
 			$articles = $this->articleModel->getByCategory($category, config('app.pagination.article'));
 		}

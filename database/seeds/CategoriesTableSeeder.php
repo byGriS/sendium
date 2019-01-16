@@ -6,7 +6,7 @@ class CategoriesTableSeeder extends Seeder{
     public function run(){
     	DB::table('categories')->insert([
     		'title' => 'Общая',
-            'owner_id' => 1
+            'owner_id' => null
     	]);
     	DB::table('categories')->insert([
     		'title' => 'Категория 1',

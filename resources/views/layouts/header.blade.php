@@ -2,10 +2,10 @@
 	<div class="headerTitle ">
 		
 	</div>
-	<div class="">
-		<form action="#" method="post">
+	<div class="rightControl">
+		<form action="{{route('logout')}}" method="post">
 			{{csrf_field()}}
-			<label>Константин</label>
+			<label>{{$user->name}}</label>
 			<button class="btn btn-sm btn-dark" type="submit">Выйти</button>
 		</form>
 	</div>

@@ -11,6 +11,7 @@
 				<form id="filterCategory" method="get" action="{{route('articleFilter')}}">
 					<select class="custom-select form-control-sm" name="category" onchange="categoryFilterChange(this);">
 						<option>Все категории</option>
+						<option @if (!empty(app('request')->input('category'))) selected @endif >Без категории</option>
 						@foreach($categories as $category)
 						<option @if (!empty(app('request')->input('category')) && (app('request')->input('category') == $category->title)) selected @endif>{{$category->title}}</option>
 						@endforeach

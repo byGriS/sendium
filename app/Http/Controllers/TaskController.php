@@ -37,6 +37,11 @@ class TaskController extends Controller{
 		return view('tasks.index', compact('tasks', 'date','tasksDay'));
 	}
 
+	public function indexCompleted(){
+		$tasks = $this->taskModel->getAllCompletedPaginate();
+		return view('tasks.indexCompleted', compact('tasks'));
+	}
+
 	public function create(){
 		$projects = Auth::user()->projects;
 		return view('tasks.create', compact('projects'));
@@ -57,6 +62,11 @@ class TaskController extends Controller{
 
 	public function complete(Task $task){
 		$this->taskModel->complete($task);
+		return redirect('task');
+	}
+
+	public function return(Task $task){
+			$this->taskModel->return($task);
 		return redirect('task');
 	}
 
