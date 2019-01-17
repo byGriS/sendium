@@ -85,7 +85,7 @@ function EditTitleCategoryForm(elem){
 	var div = form.parentElement;
 	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	$.ajax({
-		url: '/category/'+index,
+		url: window.location.pathname + '/'+index,
 		type: 'PUT',
 		data: {'_token': CSRF_TOKEN, 'title': title},
 		success: function (data) {
