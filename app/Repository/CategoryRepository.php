@@ -21,8 +21,10 @@ class CategoryRepository extends BaseRepository{
 	}*/
 
 	public function add(Category $category, $title){
+		dump($title);
 		$category->owner_id = Auth::user()->id;
 		$category->title = $title;
+		dd($category->title);
 		$category->save();
 	}
 
