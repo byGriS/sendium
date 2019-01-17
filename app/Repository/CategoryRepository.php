@@ -13,14 +13,15 @@ class CategoryRepository extends BaseRepository{
 	}
 
 	public function getAll(){
-		return $this->model->where('owner_id',Auth::user()->id)->get();
+		return $this->model->where('owner_id',Auth::user()->id)->orderBy('title')->get();
 	}
 
-	public function getAllnFirst(){
-return $this->model->where('owner_id',Auth::user()->id)->where('id','<>', 1)->get();
-	}
+	/*public function getAllnFirst(){
+		return $this->model->where('owner_id',Auth::user()->id)->where('id','<>', 1)->get();
+	}*/
 
 	public function add(Category $category, $title){
+		$category->owner_id = Auth::user()->id;
 		$category->title = $title;
 		$category->save();
 	}

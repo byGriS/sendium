@@ -19,7 +19,7 @@ class CategoryController extends Controller{
 	* @return \Illuminate\Http\Response
 	*/
 	public function index(){
-		$categories = $this->categoryModel->getAllnFirst();
+		$categories = $this->categoryModel->getAll();
 		return view('categories.index',compact('categories'));
 	}
 
