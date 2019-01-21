@@ -8,7 +8,11 @@
 			{{$task->statusStr}}
 		</div>
 		<div class="deadline">
-			{{$task->deadline->format('d.m.Y')}}
+			@if (isset($task->deadline))
+				{{$task->deadline->format('d.m.Y')}}
+			@else
+				Бессрочная
+			@endif
 		</div>
 	</a>
 	@endforeach

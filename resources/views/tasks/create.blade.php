@@ -20,6 +20,10 @@
 						<input id="datetimepicker" type="text" name="deadline" class="" value="{{date('d.m.Y')}}" readonly required/>
 					</div>
 				</div>
+				<div class="margin10">
+					<input type="checkbox" id="nonDeadline" name="nonDeadline" onchange="NonDeadlineChange();" />
+					<label for="nonDeadline">Бессрочный</label>
+				</div>
 			</div>
 			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
 				<label>Приоритет</label>

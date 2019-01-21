@@ -29,7 +29,7 @@ class TaskRepository extends BaseRepository{
 		foreach($tasks as &$task){
 			$task->deadline = ConvertDateSQL::FromSQL($task->deadline);
 			$task->priorityStr = Priority::ToString($task->priority);
-			if ($task->deadline<Carbon::today()){
+			if (isset($task->deadline) && $task->deadline < Carbon::today()){
 				$task->status = Status::OVERDUE;
 				$task->overdue = true;
 			}else{
@@ -56,7 +56,11 @@ class TaskRepository extends BaseRepository{
 
 	public function add(Task $task, $inputs){
 		$task->title = $inputs['title'];
-		$task->deadline = ConvertDateSQL::ToSQL($inputs['deadline']);
+		if (isset($inputs['nonDeadline'])){
+			$task->deadline = null;
+		}else{
+			$task->deadline = ConvertDateSQL::ToSQL($inputs['deadline']);
+		}
 		$task->priority = $inputs['priority'];
 		$task->text = $inputs['text'];
 		$task->owner_id = Auth::user()->id;
@@ -64,8 +68,8 @@ class TaskRepository extends BaseRepository{
 			$task->project_id = null;
 		}else{
 			$task->project_id = $inputs['projectID'];
-		}
-		$task->status = 0;
+		}	
+		$task->status = Status::WORK;
 		$task->save();
 	}
 

@@ -26,13 +26,12 @@ class TaskController extends Controller{
 		$tasksDay = array_fill(0, 7, array());	
 		for($i = 0; $i < 7; $i++){
 			foreach($tasks as $task){
-				if ($task->deadline->format("Y-m-d") == $dateService->format("Y-m-d")){
+				if ((isset($task->deadline)) && ($task->deadline->format("Y-m-d") == $dateService->format("Y-m-d"))){
 					array_push($tasksDay[$i], $task);
 				}
 			}
 			$dateService = $dateService->addDays(1);
 		}
-
 		$tasks = $this->taskModel->getAllPaginate();
 		return view('tasks.index', compact('tasks', 'date','tasksDay'));
 	}

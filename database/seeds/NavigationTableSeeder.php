@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 
 class NavigationsTableSeeder extends Seeder{
 	public function run(){
+    DB::table('navigations')->truncate();
+
   	DB::table('navigations')->insert([
   		'title' => 'Главная',
   		'route' => 'dashboard'
@@ -24,10 +26,10 @@ class NavigationsTableSeeder extends Seeder{
   		'title' => 'splitter',
   		'route' => ''
   	]);
-  	DB::table('navigations')->insert([
+  	/*DB::table('navigations')->insert([
   		'title' => 'Контакты',
   		'route' => 'contact.index'
-  	]);
+  	]);*/
   	DB::table('navigations')->insert([
   		'title' => 'Категории',
   		'route' => 'category.index'

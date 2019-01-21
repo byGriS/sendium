@@ -11,7 +11,7 @@ class CreateTaskTable extends Migration{
 				$table->increments('id');
 				$table->string('title', 255);
 				$table->text('text')->nullable();
-				$table->date('deadline');
+				$table->date('deadline')->nullable();
 				$table->unsignedInteger('owner_id');
 			//$table->foreign('owner_id')->references('id')->on('users');
 				$table->unsignedInteger('project_id')->nullable();

@@ -13,7 +13,13 @@
 			</div>
 			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
 				<label><b>Завершение задачи</b></label>
-				<label>{{$task->deadline->format('d.m.Y')}}</label>
+				<label>
+					@if (isset($task->deadline))
+						{{$task->deadline->format('d.m.Y')}}
+					@else
+						Бессрочная
+					@endif
+				</label>
 			</div>
 			<div class="flex flexFlowRowWrap flexAlignItemsCenter">
 				<label><b>Приоритет</b></label>
